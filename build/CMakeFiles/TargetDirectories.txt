@@ -1,0 +1,3 @@
+/mnt/c/Users/mateu/source/repos/studies/SmartArrayProject/build/CMakeFiles/MainApp.dir
+/mnt/c/Users/mateu/source/repos/studies/SmartArrayProject/build/CMakeFiles/edit_cache.dir
+/mnt/c/Users/mateu/source/repos/studies/SmartArrayProject/build/CMakeFiles/rebuild_cache.dir
