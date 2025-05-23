@@ -1,9 +1,0 @@
-prefix="C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/install/x64-Debug"
-libdir="C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/install/x64-Debug/lib"
-includedir="C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/install/x64-Debug/include"
-
-Name: ftxui
-Description: 
-Version: 5.0.0
-Cflags: -I${includedir}
-Libs: -L${libdir} -lftxui-component -lftxui-dom -lftxui-screen

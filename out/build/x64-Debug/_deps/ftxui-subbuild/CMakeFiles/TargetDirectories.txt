@@ -1,3 +1,0 @@
-C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/_deps/ftxui-subbuild/CMakeFiles/ftxui-populate.dir
-C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/_deps/ftxui-subbuild/CMakeFiles/edit_cache.dir
-C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/_deps/ftxui-subbuild/CMakeFiles/rebuild_cache.dir

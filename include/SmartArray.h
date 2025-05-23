@@ -2,6 +2,7 @@
 #include <stdexcept>
 #include <ostream>
 #include <cstddef>
+#include <fstream>
 
 template<typename T = int>
 class SmartArray {
@@ -134,6 +135,27 @@ public:
         os << "]";
         return os;
     }
+
+    bool SaveToFile(const std::string& filename) const {
+        std::ofstream file(filename);
+        if (!file.is_open()) return false;
+        for (size_t i = 0; i < m_Size; ++i)
+            file << m_Data[i].ToCSV() << "\n";
+        return true;
+    }
+
+    bool LoadFromFile(const std::string& filename) {
+        std::ifstream file(filename);
+        if (!file.is_open()) return false;
+        Clear();
+        std::string line;
+        while (std::getline(file, line)) {
+            Employee e = Employee::FromCSV(line);
+            PushBack(e);
+        }
+        return true;
+    }
+
 
 private:
     void ReAlloc(size_t newCapacity) {

@@ -14,10 +14,12 @@ int main() {
 
     // ----------- MENU ------------
     std::vector<std::string> menu_entries = {
-        "Dodaj pracownika",
-        "Wyswietl wszystkich",
-        "Usun pracownika",
-        "Wyczysc wszystkich",
+        "Dodaj pracownika",     // 0
+        "Wyswietl wszystkich",  // 1
+        "Usun pracownika",      // 2
+        "Edytuj pracownika",    // 3
+        "Wyczysc wszystkich",   // 4
+        "Zapisz / Wczytaj",     // 5
         "Wyjscie"
     };
     int selected = 0;
@@ -26,6 +28,34 @@ int main() {
     // ----------- ADD EMPLOYEE ------------
     std::string name, surname, position, age_str, salary_str;
     std::string info_message;
+
+    std::string filename = "employees.txt";
+    auto filename_input = Input(&filename, "Nazwa pliku");
+
+    auto save_to_file_btn = Button("Zapisz", [&] {
+        if (employees.SaveToFile(filename)) {
+            info_message = "Zapisano do pliku: " + filename;
+        }
+        else {
+            info_message = "Nie udało się zapisać.";
+        }
+        });
+
+    auto load_from_file_btn = Button("Wczytaj", [&] {
+        if (employees.LoadFromFile(filename)) {
+            info_message = "Wczytano z pliku: " + filename;
+        }
+        else {
+            info_message = "Nie udało się wczytać.";
+        }
+        });
+
+    auto save_load_container = Container::Vertical({
+        filename_input,
+        save_to_file_btn,
+        load_from_file_btn
+        });
+
 
     auto name_in     = Input(&name,     "Imie");
     auto surname_in  = Input(&surname,  "Nazwisko");
@@ -70,14 +100,81 @@ int main() {
     });
     auto clear_container = Container::Vertical({ clear_btn });
 
+    // ----------- EDIT EMPLOYEE ------------
+    std::string edit_index_str;
+    std::string edit_name, edit_surname, edit_position, edit_age_str, edit_salary_str;
+
+    auto edit_index_input = Input(&edit_index_str, "Indeks");
+
+    auto load_btn = Button("Wczytaj dane", [&] {
+        try {
+            size_t idx = std::stoul(edit_index_str);
+            if (idx < employees.Size()) {
+                const auto& emp = employees[idx];
+                edit_name = emp.GetName();
+                edit_surname = emp.GetSurname();
+                edit_age_str = std::to_string(emp.GetAge());
+                edit_position = emp.GetPosition();
+                edit_salary_str = std::to_string(emp.GetSalary());
+                info_message = "Wczytano dane pracownika.";
+            }
+            else {
+                info_message = "Nieprawidłowy indeks.";
+            }
+        }
+        catch (...) {
+            info_message = "Błąd danych wejściowych.";
+        }
+        });
+
+    auto edit_name_in = Input(&edit_name, "Imie");
+    auto edit_surname_in = Input(&edit_surname, "Nazwisko");
+    auto edit_age_in = Input(&edit_age_str, "Wiek");
+    auto edit_position_in = Input(&edit_position, "Stanowisko");
+    auto edit_salary_in = Input(&edit_salary_str, "Pensja");
+
+    auto save_btn = Button("Zapisz zmiany", [&] {
+        try {
+            size_t idx = std::stoul(edit_index_str);
+            if (idx < employees.Size()) {
+                employees[idx].SetName(edit_name);
+                employees[idx].SetSurname(edit_surname);
+                employees[idx].SetAge(std::stoi(edit_age_str));
+                employees[idx].SetPosition(edit_position);
+                employees[idx].SetSalary(std::stod(edit_salary_str));
+                info_message = "Zmieniono dane pracownika.";
+            }
+            else {
+                info_message = "Nieprawidłowy indeks.";
+            }
+        }
+        catch (...) {
+            info_message = "Błąd danych wejściowych.";
+        }
+        });
+
+    auto edit_container = Container::Vertical({
+        edit_index_input,
+        load_btn,
+        edit_name_in,
+        edit_surname_in,
+        edit_age_in,
+        edit_position_in,
+        edit_salary_in,
+        save_btn
+        });
+
     // ----------- TAB CONTAINER ------------
     auto content_container = Container::Tab({
-        add_container,          // 0 Dodaj
-        Container::Vertical({}),// 1 Wyswietl wszystkich (placeholder; rendered dynamically)
-        delete_container,       // 2 Usun
-        clear_container,        // 3 Wyczyść
-        Container::Vertical({}) // 4 Wyjście
+        add_container,
+        Container::Vertical({}),
+        delete_container,
+        edit_container,
+        clear_container,
+        save_load_container,
+        Container::Vertical({})
     }, &selected);
+
 
     auto root = Container::Horizontal({ menu, content_container });
 
@@ -91,7 +188,7 @@ int main() {
                 main_window = add_container->Render();
                 break;
 
-            case 1: { // list all employees
+            case 1: {
                 std::vector<Element> lines;
                 for (size_t i = 0; i < employees.Size(); ++i) {
                     std::ostringstream os;
@@ -109,13 +206,22 @@ int main() {
                 break;
 
             case 3:
-                main_window = clear_container->Render();
+                main_window = edit_container->Render();
                 break;
 
             case 4:
+                main_window = clear_container->Render();
+                break;
+
+            case 5:
+                main_window = save_load_container->Render();
+                break;
+
+            case 6:
                 screen.Exit();
                 main_window = text("Zamykam...");
                 break;
+
         }
 
         if (!info_message.empty()) {
