@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/MainApp.dir/app/main.cpp.o CMakeFiles/MainApp.dir/src/Employee.cpp.o -o MainApp 

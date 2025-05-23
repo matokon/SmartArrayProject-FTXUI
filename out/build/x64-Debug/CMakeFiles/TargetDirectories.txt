@@ -1,3 +1,32 @@
-C:/Users/mateu/source/repos/studies/SmartArrayProject/out/build/x64-Debug/CMakeFiles/MainApp.dir
-C:/Users/mateu/source/repos/studies/SmartArrayProject/out/build/x64-Debug/CMakeFiles/edit_cache.dir
-C:/Users/mateu/source/repos/studies/SmartArrayProject/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
+C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/CMakeFiles/MainApp.dir
+C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/CMakeFiles/package.dir
+C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/CMakeFiles/package_source.dir
+C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
+C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/CMakeFiles/list_install_components.dir
+C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/CMakeFiles/install.dir
+C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/CMakeFiles/install/local.dir
+C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/_deps/ftxui-build/CMakeFiles/screen.dir
+C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/_deps/ftxui-build/CMakeFiles/dom.dir
+C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/_deps/ftxui-build/CMakeFiles/component.dir
+C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/_deps/ftxui-build/CMakeFiles/package.dir
+C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/_deps/ftxui-build/CMakeFiles/package_source.dir
+C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/_deps/ftxui-build/CMakeFiles/edit_cache.dir
+C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/_deps/ftxui-build/CMakeFiles/rebuild_cache.dir
+C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/_deps/ftxui-build/CMakeFiles/list_install_components.dir
+C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/_deps/ftxui-build/CMakeFiles/install.dir
+C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/_deps/ftxui-build/CMakeFiles/install/local.dir
+C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/_deps/ftxui-build/examples/CMakeFiles/package.dir
+C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/_deps/ftxui-build/examples/CMakeFiles/package_source.dir
+C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/_deps/ftxui-build/examples/CMakeFiles/edit_cache.dir
+C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/_deps/ftxui-build/examples/CMakeFiles/rebuild_cache.dir
+C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/_deps/ftxui-build/examples/CMakeFiles/list_install_components.dir
+C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/_deps/ftxui-build/examples/CMakeFiles/install.dir
+C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/_deps/ftxui-build/examples/CMakeFiles/install/local.dir
+C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/_deps/ftxui-build/doc/CMakeFiles/package.dir
+C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/_deps/ftxui-build/doc/CMakeFiles/package_source.dir
+C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/_deps/ftxui-build/doc/CMakeFiles/edit_cache.dir
+C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/_deps/ftxui-build/doc/CMakeFiles/rebuild_cache.dir
+C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/_deps/ftxui-build/doc/CMakeFiles/list_install_components.dir
+C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/_deps/ftxui-build/doc/CMakeFiles/install.dir
+C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/_deps/ftxui-build/doc/CMakeFiles/install/local.dir

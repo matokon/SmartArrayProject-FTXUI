@@ -15,6 +15,7 @@ public:
     void SetPosition(const std::string& position) { m_Position = position; }
 
     void Print() const;
+    std::string ToString() const;
 
 private:
     std::string m_Name;

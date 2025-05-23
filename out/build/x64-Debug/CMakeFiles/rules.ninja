@@ -44,10 +44,64 @@ rule CUSTOM_COMMAND
 
 
 #############################################
+# Rule for compiling CXX files.
+
+rule CXX_COMPILER__screen_unscanned_Debug
+  deps = msvc
+  command = ${LAUNCHER}${CODE_CHECK}W:\vscode\VC\Tools\MSVC\14.42.34433\bin\Hostx64\x64\cl.exe  /nologo /TP $DEFINES $INCLUDES $FLAGS /showIncludes /Fo$out /Fd$TARGET_COMPILE_PDB /FS -c $in
+  description = Building CXX object $out
+
+
+#############################################
+# Rule for linking CXX static library.
+
+rule CXX_STATIC_LIBRARY_LINKER__screen_Debug
+  command = C:\Windows\system32\cmd.exe /C "$PRE_LINK && W:\vscode\VC\Tools\MSVC\14.42.34433\bin\Hostx64\x64\lib.exe /nologo $LINK_FLAGS /out:$TARGET_FILE $in && $POST_BUILD"
+  description = Linking CXX static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling CXX files.
+
+rule CXX_COMPILER__dom_unscanned_Debug
+  deps = msvc
+  command = ${LAUNCHER}${CODE_CHECK}W:\vscode\VC\Tools\MSVC\14.42.34433\bin\Hostx64\x64\cl.exe  /nologo /TP $DEFINES $INCLUDES $FLAGS /showIncludes /Fo$out /Fd$TARGET_COMPILE_PDB /FS -c $in
+  description = Building CXX object $out
+
+
+#############################################
+# Rule for linking CXX static library.
+
+rule CXX_STATIC_LIBRARY_LINKER__dom_Debug
+  command = C:\Windows\system32\cmd.exe /C "$PRE_LINK && W:\vscode\VC\Tools\MSVC\14.42.34433\bin\Hostx64\x64\lib.exe /nologo $LINK_FLAGS /out:$TARGET_FILE $in && $POST_BUILD"
+  description = Linking CXX static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling CXX files.
+
+rule CXX_COMPILER__component_unscanned_Debug
+  deps = msvc
+  command = ${LAUNCHER}${CODE_CHECK}W:\vscode\VC\Tools\MSVC\14.42.34433\bin\Hostx64\x64\cl.exe  /nologo /TP $DEFINES $INCLUDES $FLAGS /showIncludes /Fo$out /Fd$TARGET_COMPILE_PDB /FS -c $in
+  description = Building CXX object $out
+
+
+#############################################
+# Rule for linking CXX static library.
+
+rule CXX_STATIC_LIBRARY_LINKER__component_Debug
+  command = C:\Windows\system32\cmd.exe /C "$PRE_LINK && W:\vscode\VC\Tools\MSVC\14.42.34433\bin\Hostx64\x64\lib.exe /nologo $LINK_FLAGS /out:$TARGET_FILE $in && $POST_BUILD"
+  description = Linking CXX static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = W:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe --regenerate-during-build -SC:\Users\mateu\source\repos\studies\SmartArrayProject -BC:\Users\mateu\source\repos\studies\SmartArrayProject\out\build\x64-Debug
+  command = W:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe --regenerate-during-build -S"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI" -B"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug"
   description = Re-running CMake...
   generator = 1
 

@@ -39,7 +39,7 @@ include CMakeFiles\rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = C$:\Users\mateu\source\repos\studies\SmartArrayProject\out\build\x64-Debug\
+cmake_ninja_workdir = C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\
 # =============================================================================
 # Object build statements for EXECUTABLE target MainApp
 
@@ -47,19 +47,19 @@ cmake_ninja_workdir = C$:\Users\mateu\source\repos\studies\SmartArrayProject\out
 #############################################
 # Order-only phony target for MainApp
 
-build cmake_object_order_depends_target_MainApp: phony || .
+build cmake_object_order_depends_target_MainApp: phony || cmake_object_order_depends_target_component cmake_object_order_depends_target_dom cmake_object_order_depends_target_screen
 
-build CMakeFiles\MainApp.dir\app\main.cpp.obj: CXX_COMPILER__MainApp_unscanned_Debug C$:\Users\mateu\source\repos\studies\SmartArrayProject\app\main.cpp || cmake_object_order_depends_target_MainApp
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -IC:\Users\mateu\source\repos\studies\SmartArrayProject\include
+build CMakeFiles\MainApp.dir\app\main.cpp.obj: CXX_COMPILER__MainApp_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\app\main.cpp || cmake_object_order_depends_target_MainApp
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\include" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
   OBJECT_DIR = CMakeFiles\MainApp.dir
   OBJECT_FILE_DIR = CMakeFiles\MainApp.dir\app
   TARGET_COMPILE_PDB = CMakeFiles\MainApp.dir\
   TARGET_PDB = MainApp.pdb
 
-build CMakeFiles\MainApp.dir\src\Employee.cpp.obj: CXX_COMPILER__MainApp_unscanned_Debug C$:\Users\mateu\source\repos\studies\SmartArrayProject\src\Employee.cpp || cmake_object_order_depends_target_MainApp
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -IC:\Users\mateu\source\repos\studies\SmartArrayProject\include
+build CMakeFiles\MainApp.dir\src\Employee.cpp.obj: CXX_COMPILER__MainApp_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\src\Employee.cpp || cmake_object_order_depends_target_MainApp
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\include" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
   OBJECT_DIR = CMakeFiles\MainApp.dir
   OBJECT_FILE_DIR = CMakeFiles\MainApp.dir\src
   TARGET_COMPILE_PDB = CMakeFiles\MainApp.dir\
@@ -73,10 +73,10 @@ build CMakeFiles\MainApp.dir\src\Employee.cpp.obj: CXX_COMPILER__MainApp_unscann
 #############################################
 # Link the executable MainApp.exe
 
-build MainApp.exe: CXX_EXECUTABLE_LINKER__MainApp_Debug CMakeFiles\MainApp.dir\app\main.cpp.obj CMakeFiles\MainApp.dir\src\Employee.cpp.obj
+build MainApp.exe: CXX_EXECUTABLE_LINKER__MainApp_Debug CMakeFiles\MainApp.dir\app\main.cpp.obj CMakeFiles\MainApp.dir\src\Employee.cpp.obj | _deps\ftxui-build\ftxui-component.lib _deps\ftxui-build\ftxui-dom.lib _deps\ftxui-build\ftxui-screen.lib || _deps\ftxui-build\ftxui-component.lib _deps\ftxui-build\ftxui-dom.lib _deps\ftxui-build\ftxui-screen.lib
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
-  LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  LINK_LIBRARIES = _deps\ftxui-build\ftxui-component.lib  _deps\ftxui-build\ftxui-dom.lib  _deps\ftxui-build\ftxui-screen.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
   OBJECT_DIR = CMakeFiles\MainApp.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
@@ -87,10 +87,34 @@ build MainApp.exe: CXX_EXECUTABLE_LINKER__MainApp_Debug CMakeFiles\MainApp.dir\a
 
 
 #############################################
+# Utility command for package
+
+build CMakeFiles\package.util: CUSTOM_COMMAND all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug" && W:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cpack.exe --config ./CPackConfig.cmake"
+  DESC = Run CPack packaging tool...
+  pool = console
+  restat = 1
+
+build package: phony CMakeFiles\package.util
+
+
+#############################################
+# Utility command for package_source
+
+build CMakeFiles\package_source.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug" && W:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cpack.exe --config ./CPackSourceConfig.cmake "C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/CPackSourceConfig.cmake""
+  DESC = Run CPack packaging tool for source...
+  pool = console
+  restat = 1
+
+build package_source: phony CMakeFiles\package_source.util
+
+
+#############################################
 # Utility command for edit_cache
 
 build CMakeFiles\edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\mateu\source\repos\studies\SmartArrayProject\out\build\x64-Debug && W:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug" && W:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -101,17 +125,1007 @@ build edit_cache: phony CMakeFiles\edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\mateu\source\repos\studies\SmartArrayProject\out\build\x64-Debug && W:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe --regenerate-during-build -SC:\Users\mateu\source\repos\studies\SmartArrayProject -BC:\Users\mateu\source\repos\studies\SmartArrayProject\out\build\x64-Debug"
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug" && W:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe --regenerate-during-build -S"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI" -B"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug""
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
 
 build rebuild_cache: phony CMakeFiles\rebuild_cache.util
 
+
+#############################################
+# Utility command for list_install_components
+
+build list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build CMakeFiles\install.util: CUSTOM_COMMAND all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug" && W:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build install: phony CMakeFiles\install.util
+
+
+#############################################
+# Utility command for install/local
+
+build CMakeFiles\install\local.util: CUSTOM_COMMAND all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug" && W:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build install\local: phony CMakeFiles\install\local.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target screen
+
+
+#############################################
+# Order-only phony target for screen
+
+build cmake_object_order_depends_target_screen: phony || .
+
+build _deps\ftxui-build\CMakeFiles\screen.dir\src\ftxui\screen\box.cpp.obj: CXX_COMPILER__screen_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\screen\box.cpp || cmake_object_order_depends_target_screen
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include"
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\screen.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\screen.dir\src\ftxui\screen
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\screen.dir\screen.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-screen.pdb
+
+build _deps\ftxui-build\CMakeFiles\screen.dir\src\ftxui\screen\color.cpp.obj: CXX_COMPILER__screen_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\screen\color.cpp || cmake_object_order_depends_target_screen
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include"
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\screen.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\screen.dir\src\ftxui\screen
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\screen.dir\screen.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-screen.pdb
+
+build _deps\ftxui-build\CMakeFiles\screen.dir\src\ftxui\screen\color_info.cpp.obj: CXX_COMPILER__screen_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\screen\color_info.cpp || cmake_object_order_depends_target_screen
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include"
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\screen.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\screen.dir\src\ftxui\screen
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\screen.dir\screen.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-screen.pdb
+
+build _deps\ftxui-build\CMakeFiles\screen.dir\src\ftxui\screen\screen.cpp.obj: CXX_COMPILER__screen_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\screen\screen.cpp || cmake_object_order_depends_target_screen
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include"
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\screen.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\screen.dir\src\ftxui\screen
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\screen.dir\screen.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-screen.pdb
+
+build _deps\ftxui-build\CMakeFiles\screen.dir\src\ftxui\screen\string.cpp.obj: CXX_COMPILER__screen_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\screen\string.cpp || cmake_object_order_depends_target_screen
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include"
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\screen.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\screen.dir\src\ftxui\screen
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\screen.dir\screen.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-screen.pdb
+
+build _deps\ftxui-build\CMakeFiles\screen.dir\src\ftxui\screen\terminal.cpp.obj: CXX_COMPILER__screen_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\screen\terminal.cpp || cmake_object_order_depends_target_screen
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include"
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\screen.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\screen.dir\src\ftxui\screen
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\screen.dir\screen.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-screen.pdb
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target screen
+
+
+#############################################
+# Link the static library _deps\ftxui-build\ftxui-screen.lib
+
+build _deps\ftxui-build\ftxui-screen.lib: CXX_STATIC_LIBRARY_LINKER__screen_Debug _deps\ftxui-build\CMakeFiles\screen.dir\src\ftxui\screen\box.cpp.obj _deps\ftxui-build\CMakeFiles\screen.dir\src\ftxui\screen\color.cpp.obj _deps\ftxui-build\CMakeFiles\screen.dir\src\ftxui\screen\color_info.cpp.obj _deps\ftxui-build\CMakeFiles\screen.dir\src\ftxui\screen\screen.cpp.obj _deps\ftxui-build\CMakeFiles\screen.dir\src\ftxui\screen\string.cpp.obj _deps\ftxui-build\CMakeFiles\screen.dir\src\ftxui\screen\terminal.cpp.obj
+  LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  LINK_FLAGS = /machine:x64
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\screen.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\screen.dir\screen.pdb
+  TARGET_FILE = _deps\ftxui-build\ftxui-screen.lib
+  TARGET_PDB = _deps\ftxui-build\ftxui-screen.pdb
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target dom
+
+
+#############################################
+# Order-only phony target for dom
+
+build cmake_object_order_depends_target_dom: phony || cmake_object_order_depends_target_screen
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\automerge.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\automerge.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\blink.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\blink.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\bold.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\bold.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\hyperlink.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\hyperlink.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\border.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\border.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\box_helper.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\box_helper.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\canvas.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\canvas.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\clear_under.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\clear_under.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\color.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\color.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\composite_decorator.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\composite_decorator.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\dbox.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\dbox.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\dim.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\dim.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\flex.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\flex.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\flexbox.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\flexbox.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\flexbox_config.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\flexbox_config.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\flexbox_helper.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\flexbox_helper.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\focus.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\focus.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\frame.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\frame.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\gauge.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\gauge.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\graph.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\graph.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\gridbox.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\gridbox.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\hbox.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\hbox.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\inverted.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\inverted.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\linear_gradient.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\linear_gradient.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\node.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\node.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\node_decorator.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\node_decorator.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\paragraph.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\paragraph.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\reflect.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\reflect.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\scroll_indicator.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\scroll_indicator.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\separator.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\separator.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\size.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\size.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\spinner.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\spinner.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\strikethrough.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\strikethrough.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\table.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\table.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\text.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\text.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\underlined.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\underlined.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\underlined_double.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\underlined_double.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\util.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\util.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+build _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\vbox.cpp.obj: CXX_COMPILER__dom_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\dom\vbox.cpp || cmake_object_order_depends_target_dom
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target dom
+
+
+#############################################
+# Link the static library _deps\ftxui-build\ftxui-dom.lib
+
+build _deps\ftxui-build\ftxui-dom.lib: CXX_STATIC_LIBRARY_LINKER__dom_Debug _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\automerge.cpp.obj _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\blink.cpp.obj _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\bold.cpp.obj _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\hyperlink.cpp.obj _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\border.cpp.obj _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\box_helper.cpp.obj _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\canvas.cpp.obj _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\clear_under.cpp.obj _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\color.cpp.obj _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\composite_decorator.cpp.obj _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\dbox.cpp.obj _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\dim.cpp.obj _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\flex.cpp.obj _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\flexbox.cpp.obj _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\flexbox_config.cpp.obj _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\flexbox_helper.cpp.obj _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\focus.cpp.obj _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\frame.cpp.obj _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\gauge.cpp.obj _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\graph.cpp.obj _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\gridbox.cpp.obj _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\hbox.cpp.obj _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\inverted.cpp.obj _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\linear_gradient.cpp.obj _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\node.cpp.obj _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\node_decorator.cpp.obj _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\paragraph.cpp.obj _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\reflect.cpp.obj _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\scroll_indicator.cpp.obj _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\separator.cpp.obj _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\size.cpp.obj _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\spinner.cpp.obj _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\strikethrough.cpp.obj _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\table.cpp.obj _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\text.cpp.obj _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\underlined.cpp.obj _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\underlined_double.cpp.obj _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\util.cpp.obj _deps\ftxui-build\CMakeFiles\dom.dir\src\ftxui\dom\vbox.cpp.obj || _deps\ftxui-build\ftxui-screen.lib
+  LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  LINK_FLAGS = /machine:x64
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\dom.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\dom.dir\dom.pdb
+  TARGET_FILE = _deps\ftxui-build\ftxui-dom.lib
+  TARGET_PDB = _deps\ftxui-build\ftxui-dom.pdb
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target component
+
+
+#############################################
+# Order-only phony target for component
+
+build cmake_object_order_depends_target_component: phony || cmake_object_order_depends_target_dom cmake_object_order_depends_target_screen
+
+build _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\animation.cpp.obj: CXX_COMPILER__component_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\component\animation.cpp || cmake_object_order_depends_target_component
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\component.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\component.dir\component.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-component.pdb
+
+build _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\button.cpp.obj: CXX_COMPILER__component_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\component\button.cpp || cmake_object_order_depends_target_component
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\component.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\component.dir\component.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-component.pdb
+
+build _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\catch_event.cpp.obj: CXX_COMPILER__component_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\component\catch_event.cpp || cmake_object_order_depends_target_component
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\component.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\component.dir\component.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-component.pdb
+
+build _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\checkbox.cpp.obj: CXX_COMPILER__component_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\component\checkbox.cpp || cmake_object_order_depends_target_component
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\component.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\component.dir\component.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-component.pdb
+
+build _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\collapsible.cpp.obj: CXX_COMPILER__component_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\component\collapsible.cpp || cmake_object_order_depends_target_component
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\component.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\component.dir\component.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-component.pdb
+
+build _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\component.cpp.obj: CXX_COMPILER__component_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\component\component.cpp || cmake_object_order_depends_target_component
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\component.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\component.dir\component.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-component.pdb
+
+build _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\component_options.cpp.obj: CXX_COMPILER__component_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\component\component_options.cpp || cmake_object_order_depends_target_component
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\component.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\component.dir\component.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-component.pdb
+
+build _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\container.cpp.obj: CXX_COMPILER__component_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\component\container.cpp || cmake_object_order_depends_target_component
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\component.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\component.dir\component.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-component.pdb
+
+build _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\dropdown.cpp.obj: CXX_COMPILER__component_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\component\dropdown.cpp || cmake_object_order_depends_target_component
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\component.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\component.dir\component.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-component.pdb
+
+build _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\event.cpp.obj: CXX_COMPILER__component_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\component\event.cpp || cmake_object_order_depends_target_component
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\component.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\component.dir\component.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-component.pdb
+
+build _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\hoverable.cpp.obj: CXX_COMPILER__component_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\component\hoverable.cpp || cmake_object_order_depends_target_component
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\component.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\component.dir\component.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-component.pdb
+
+build _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\input.cpp.obj: CXX_COMPILER__component_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\component\input.cpp || cmake_object_order_depends_target_component
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\component.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\component.dir\component.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-component.pdb
+
+build _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\loop.cpp.obj: CXX_COMPILER__component_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\component\loop.cpp || cmake_object_order_depends_target_component
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\component.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\component.dir\component.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-component.pdb
+
+build _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\maybe.cpp.obj: CXX_COMPILER__component_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\component\maybe.cpp || cmake_object_order_depends_target_component
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\component.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\component.dir\component.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-component.pdb
+
+build _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\menu.cpp.obj: CXX_COMPILER__component_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\component\menu.cpp || cmake_object_order_depends_target_component
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\component.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\component.dir\component.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-component.pdb
+
+build _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\modal.cpp.obj: CXX_COMPILER__component_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\component\modal.cpp || cmake_object_order_depends_target_component
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\component.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\component.dir\component.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-component.pdb
+
+build _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\radiobox.cpp.obj: CXX_COMPILER__component_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\component\radiobox.cpp || cmake_object_order_depends_target_component
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\component.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\component.dir\component.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-component.pdb
+
+build _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\renderer.cpp.obj: CXX_COMPILER__component_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\component\renderer.cpp || cmake_object_order_depends_target_component
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\component.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\component.dir\component.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-component.pdb
+
+build _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\resizable_split.cpp.obj: CXX_COMPILER__component_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\component\resizable_split.cpp || cmake_object_order_depends_target_component
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\component.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\component.dir\component.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-component.pdb
+
+build _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\screen_interactive.cpp.obj: CXX_COMPILER__component_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\component\screen_interactive.cpp || cmake_object_order_depends_target_component
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\component.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\component.dir\component.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-component.pdb
+
+build _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\slider.cpp.obj: CXX_COMPILER__component_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\component\slider.cpp || cmake_object_order_depends_target_component
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\component.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\component.dir\component.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-component.pdb
+
+build _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\terminal_input_parser.cpp.obj: CXX_COMPILER__component_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\component\terminal_input_parser.cpp || cmake_object_order_depends_target_component
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\component.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\component.dir\component.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-component.pdb
+
+build _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\util.cpp.obj: CXX_COMPILER__component_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\component\util.cpp || cmake_object_order_depends_target_component
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\component.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\component.dir\component.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-component.pdb
+
+build _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\window.cpp.obj: CXX_COMPILER__component_unscanned_Debug C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src\ftxui\component\window.cpp || cmake_object_order_depends_target_component
+  DEFINES = -DFTXUI_MICROSOFT_TERMINAL_FALLBACK -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /utf-8 /wd4244 /wd4267 /D_CRT_SECURE_NO_WARNINGS
+  INCLUDES = -I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\src" -external:I"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-src\include" -external:W0
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\component.dir
+  OBJECT_FILE_DIR = _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\component.dir\component.pdb
+  TARGET_PDB = _deps\ftxui-build\ftxui-component.pdb
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target component
+
+
+#############################################
+# Link the static library _deps\ftxui-build\ftxui-component.lib
+
+build _deps\ftxui-build\ftxui-component.lib: CXX_STATIC_LIBRARY_LINKER__component_Debug _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\animation.cpp.obj _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\button.cpp.obj _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\catch_event.cpp.obj _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\checkbox.cpp.obj _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\collapsible.cpp.obj _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\component.cpp.obj _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\component_options.cpp.obj _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\container.cpp.obj _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\dropdown.cpp.obj _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\event.cpp.obj _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\hoverable.cpp.obj _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\input.cpp.obj _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\loop.cpp.obj _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\maybe.cpp.obj _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\menu.cpp.obj _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\modal.cpp.obj _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\radiobox.cpp.obj _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\renderer.cpp.obj _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\resizable_split.cpp.obj _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\screen_interactive.cpp.obj _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\slider.cpp.obj _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\terminal_input_parser.cpp.obj _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\util.cpp.obj _deps\ftxui-build\CMakeFiles\component.dir\src\ftxui\component\window.cpp.obj || _deps\ftxui-build\ftxui-dom.lib _deps\ftxui-build\ftxui-screen.lib
+  LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  LINK_FLAGS = /machine:x64
+  OBJECT_DIR = _deps\ftxui-build\CMakeFiles\component.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = _deps\ftxui-build\CMakeFiles\component.dir\component.pdb
+  TARGET_FILE = _deps\ftxui-build\ftxui-component.lib
+  TARGET_PDB = _deps\ftxui-build\ftxui-component.pdb
+
+
+#############################################
+# Utility command for package
+
+build _deps\ftxui-build\CMakeFiles\package.util: CUSTOM_COMMAND _deps\ftxui-build\all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug" && W:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cpack.exe --config ./CPackConfig.cmake"
+  DESC = Run CPack packaging tool...
+  pool = console
+  restat = 1
+
+build _deps\ftxui-build\package: phony _deps\ftxui-build\CMakeFiles\package.util
+
+
+#############################################
+# Utility command for package_source
+
+build _deps\ftxui-build\CMakeFiles\package_source.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug" && W:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cpack.exe --config ./CPackSourceConfig.cmake "C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/CPackSourceConfig.cmake""
+  DESC = Run CPack packaging tool for source...
+  pool = console
+  restat = 1
+
+build _deps\ftxui-build\package_source: phony _deps\ftxui-build\CMakeFiles\package_source.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build _deps\ftxui-build\CMakeFiles\edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-build" && W:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build _deps\ftxui-build\edit_cache: phony _deps\ftxui-build\CMakeFiles\edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build _deps\ftxui-build\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-build" && W:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe --regenerate-during-build -S"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI" -B"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug""
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps\ftxui-build\rebuild_cache: phony _deps\ftxui-build\CMakeFiles\rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build _deps\ftxui-build\list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build _deps\ftxui-build\CMakeFiles\install.util: CUSTOM_COMMAND _deps\ftxui-build\all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-build" && W:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build _deps\ftxui-build\install: phony _deps\ftxui-build\CMakeFiles\install.util
+
+
+#############################################
+# Utility command for install/local
+
+build _deps\ftxui-build\CMakeFiles\install\local.util: CUSTOM_COMMAND _deps\ftxui-build\all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-build" && W:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build _deps\ftxui-build\install\local: phony _deps\ftxui-build\CMakeFiles\install\local.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/_deps/ftxui-src/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for package
+
+build _deps\ftxui-build\examples\CMakeFiles\package.util: CUSTOM_COMMAND _deps\ftxui-build\examples\all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug" && W:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cpack.exe --config ./CPackConfig.cmake"
+  DESC = Run CPack packaging tool...
+  pool = console
+  restat = 1
+
+build _deps\ftxui-build\examples\package: phony _deps\ftxui-build\examples\CMakeFiles\package.util
+
+
+#############################################
+# Utility command for package_source
+
+build _deps\ftxui-build\examples\CMakeFiles\package_source.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug" && W:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cpack.exe --config ./CPackSourceConfig.cmake "C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/CPackSourceConfig.cmake""
+  DESC = Run CPack packaging tool for source...
+  pool = console
+  restat = 1
+
+build _deps\ftxui-build\examples\package_source: phony _deps\ftxui-build\examples\CMakeFiles\package_source.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build _deps\ftxui-build\examples\CMakeFiles\edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-build\examples" && W:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build _deps\ftxui-build\examples\edit_cache: phony _deps\ftxui-build\examples\CMakeFiles\edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build _deps\ftxui-build\examples\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-build\examples" && W:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe --regenerate-during-build -S"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI" -B"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug""
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps\ftxui-build\examples\rebuild_cache: phony _deps\ftxui-build\examples\CMakeFiles\rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build _deps\ftxui-build\examples\list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build _deps\ftxui-build\examples\CMakeFiles\install.util: CUSTOM_COMMAND _deps\ftxui-build\examples\all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-build\examples" && W:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build _deps\ftxui-build\examples\install: phony _deps\ftxui-build\examples\CMakeFiles\install.util
+
+
+#############################################
+# Utility command for install/local
+
+build _deps\ftxui-build\examples\CMakeFiles\install\local.util: CUSTOM_COMMAND _deps\ftxui-build\examples\all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-build\examples" && W:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build _deps\ftxui-build\examples\install\local: phony _deps\ftxui-build\examples\CMakeFiles\install\local.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/_deps/ftxui-src/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for package
+
+build _deps\ftxui-build\doc\CMakeFiles\package.util: CUSTOM_COMMAND _deps\ftxui-build\doc\all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug" && W:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cpack.exe --config ./CPackConfig.cmake"
+  DESC = Run CPack packaging tool...
+  pool = console
+  restat = 1
+
+build _deps\ftxui-build\doc\package: phony _deps\ftxui-build\doc\CMakeFiles\package.util
+
+
+#############################################
+# Utility command for package_source
+
+build _deps\ftxui-build\doc\CMakeFiles\package_source.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug" && W:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cpack.exe --config ./CPackSourceConfig.cmake "C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/CPackSourceConfig.cmake""
+  DESC = Run CPack packaging tool for source...
+  pool = console
+  restat = 1
+
+build _deps\ftxui-build\doc\package_source: phony _deps\ftxui-build\doc\CMakeFiles\package_source.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build _deps\ftxui-build\doc\CMakeFiles\edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-build\doc" && W:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build _deps\ftxui-build\doc\edit_cache: phony _deps\ftxui-build\doc\CMakeFiles\edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build _deps\ftxui-build\doc\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-build\doc" && W:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe --regenerate-during-build -S"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI" -B"C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug""
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps\ftxui-build\doc\rebuild_cache: phony _deps\ftxui-build\doc\CMakeFiles\rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build _deps\ftxui-build\doc\list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build _deps\ftxui-build\doc\CMakeFiles\install.util: CUSTOM_COMMAND _deps\ftxui-build\doc\all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-build\doc" && W:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build _deps\ftxui-build\doc\install: phony _deps\ftxui-build\doc\CMakeFiles\install.util
+
+
+#############################################
+# Utility command for install/local
+
+build _deps\ftxui-build\doc\CMakeFiles\install\local.util: CUSTOM_COMMAND _deps\ftxui-build\doc\all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D "C:\Users\mateu\OneDrive\Pulpit\Nowy folder\SmartArrayProject-FTXUI\out\build\x64-Debug\_deps\ftxui-build\doc" && W:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build _deps\ftxui-build\doc\install\local: phony _deps\ftxui-build\doc\CMakeFiles\install\local.util
+
 # =============================================================================
 # Target aliases.
 
 build MainApp: phony MainApp.exe
+
+build component: phony _deps\ftxui-build\ftxui-component.lib
+
+build dom: phony _deps\ftxui-build\ftxui-dom.lib
+
+build ftxui-component.lib: phony _deps\ftxui-build\ftxui-component.lib
+
+build ftxui-dom.lib: phony _deps\ftxui-build\ftxui-dom.lib
+
+build ftxui-screen.lib: phony _deps\ftxui-build\ftxui-screen.lib
+
+build screen: phony _deps\ftxui-build\ftxui-screen.lib
 
 # =============================================================================
 # Folder targets.
@@ -119,9 +1133,30 @@ build MainApp: phony MainApp.exe
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/mateu/source/repos/studies/SmartArrayProject/out/build/x64-Debug
+# Folder: C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug
 
-build all: phony MainApp.exe
+build all: phony MainApp.exe _deps\ftxui-build\all
+
+# =============================================================================
+
+#############################################
+# Folder: C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/_deps/ftxui-build
+
+build _deps\ftxui-build\all: phony _deps\ftxui-build\ftxui-screen.lib _deps\ftxui-build\ftxui-dom.lib _deps\ftxui-build\ftxui-component.lib _deps\ftxui-build\examples\all _deps\ftxui-build\doc\all
+
+# =============================================================================
+
+#############################################
+# Folder: C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/_deps/ftxui-build/doc
+
+build _deps\ftxui-build\doc\all: phony
+
+# =============================================================================
+
+#############################################
+# Folder: C:/Users/mateu/OneDrive/Pulpit/Nowy folder/SmartArrayProject-FTXUI/out/build/x64-Debug/_deps/ftxui-build/examples
+
+build _deps\ftxui-build\examples\all: phony
 
 # =============================================================================
 # Built-in targets
@@ -130,14 +1165,14 @@ build all: phony MainApp.exe
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | C$:\Users\mateu\source\repos\studies\SmartArrayProject\CMakeLists.txt CMakeCache.txt CMakeFiles\3.29.5-msvc4\CMakeCXXCompiler.cmake CMakeFiles\3.29.5-msvc4\CMakeRCCompiler.cmake CMakeFiles\3.29.5-msvc4\CMakeSystem.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeCXXInformation.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeCommonLanguageInclude.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeGenericSystem.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeInitializeConfigs.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeLanguageInformation.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeRCInformation.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeSystemSpecificInformation.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeSystemSpecificInitialize.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\CMakeCommonCompilerMacros.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\MSVC-CXX.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\MSVC.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-Initialize.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-MSVC-CXX.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-MSVC.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\WindowsPaths.cmake
+build build.ninja: RERUN_CMAKE | C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\CMakeLists.txt CMakeCache.txt CMakeFiles\3.29.5-msvc4\CMakeCXXCompiler.cmake CMakeFiles\3.29.5-msvc4\CMakeRCCompiler.cmake CMakeFiles\3.29.5-msvc4\CMakeSystem.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\BasicConfigVersion-SameMajorVersion.cmake.in W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeCXXInformation.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeCommonLanguageInclude.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeGenericSystem.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeInitializeConfigs.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeLanguageInformation.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakePackageConfigHelpers.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeRCInformation.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeSystemSpecificInformation.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeSystemSpecificInitialize.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CPack.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CPackComponent.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CheckCXXSourceCompiles.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CheckIncludeFileCXX.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CheckLibraryExists.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\CMakeCommonCompilerMacros.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\MSVC-CXX.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\MSVC.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\ExternalProject\shared_internal_commands.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FetchContent.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FetchContent\CMakeLists.cmake.in W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindGit.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindPackageMessage.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindThreads.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\GNUInstallDirs.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Internal\CheckSourceCompiles.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-Initialize.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-MSVC-CXX.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-MSVC.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\WindowsPaths.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\WriteBasicConfigVersionFile.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Templates\CPackConfig.cmake.in _deps\ftxui-src\CMakeLists.txt _deps\ftxui-src\cmake\ftxui-config.cmake.in _deps\ftxui-src\cmake\ftxui_benchmark.cmake _deps\ftxui-src\cmake\ftxui_coverage.cmake _deps\ftxui-src\cmake\ftxui_export.cmake _deps\ftxui-src\cmake\ftxui_fuzzer.cmake _deps\ftxui-src\cmake\ftxui_install.cmake _deps\ftxui-src\cmake\ftxui_message.cmake _deps\ftxui-src\cmake\ftxui_package.cmake _deps\ftxui-src\cmake\ftxui_set_options.cmake _deps\ftxui-src\cmake\ftxui_test.cmake _deps\ftxui-src\cmake\iwyu.cmake _deps\ftxui-src\doc\CMakeLists.txt _deps\ftxui-src\examples\CMakeLists.txt _deps\ftxui-src\ftxui.pc.in
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:\Users\mateu\source\repos\studies\SmartArrayProject\CMakeLists.txt CMakeCache.txt CMakeFiles\3.29.5-msvc4\CMakeCXXCompiler.cmake CMakeFiles\3.29.5-msvc4\CMakeRCCompiler.cmake CMakeFiles\3.29.5-msvc4\CMakeSystem.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeCXXInformation.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeCommonLanguageInclude.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeGenericSystem.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeInitializeConfigs.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeLanguageInformation.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeRCInformation.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeSystemSpecificInformation.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeSystemSpecificInitialize.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\CMakeCommonCompilerMacros.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\MSVC-CXX.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\MSVC.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-Initialize.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-MSVC-CXX.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-MSVC.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\WindowsPaths.cmake: phony
+build C$:\Users\mateu\OneDrive\Pulpit\Nowy$ folder\SmartArrayProject-FTXUI\CMakeLists.txt CMakeCache.txt CMakeFiles\3.29.5-msvc4\CMakeCXXCompiler.cmake CMakeFiles\3.29.5-msvc4\CMakeRCCompiler.cmake CMakeFiles\3.29.5-msvc4\CMakeSystem.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\BasicConfigVersion-SameMajorVersion.cmake.in W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeCXXInformation.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeCommonLanguageInclude.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeGenericSystem.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeInitializeConfigs.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeLanguageInformation.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakePackageConfigHelpers.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeRCInformation.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeSystemSpecificInformation.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeSystemSpecificInitialize.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CPack.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CPackComponent.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CheckCXXSourceCompiles.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CheckIncludeFileCXX.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CheckLibraryExists.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\CMakeCommonCompilerMacros.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\MSVC-CXX.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\MSVC.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\ExternalProject\shared_internal_commands.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FetchContent.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FetchContent\CMakeLists.cmake.in W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindGit.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindPackageMessage.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindThreads.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\GNUInstallDirs.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Internal\CheckSourceCompiles.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-Initialize.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-MSVC-CXX.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-MSVC.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\WindowsPaths.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\WriteBasicConfigVersionFile.cmake W$:\vscode\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Templates\CPackConfig.cmake.in _deps\ftxui-src\CMakeLists.txt _deps\ftxui-src\cmake\ftxui-config.cmake.in _deps\ftxui-src\cmake\ftxui_benchmark.cmake _deps\ftxui-src\cmake\ftxui_coverage.cmake _deps\ftxui-src\cmake\ftxui_export.cmake _deps\ftxui-src\cmake\ftxui_fuzzer.cmake _deps\ftxui-src\cmake\ftxui_install.cmake _deps\ftxui-src\cmake\ftxui_message.cmake _deps\ftxui-src\cmake\ftxui_package.cmake _deps\ftxui-src\cmake\ftxui_set_options.cmake _deps\ftxui-src\cmake\ftxui_test.cmake _deps\ftxui-src\cmake\iwyu.cmake _deps\ftxui-src\doc\CMakeLists.txt _deps\ftxui-src\examples\CMakeLists.txt _deps\ftxui-src\ftxui.pc.in: phony
 
 
 #############################################

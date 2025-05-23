@@ -1,105 +1,135 @@
-#include <iostream>
-#include <limits>
+#include <ftxui/component/screen_interactive.hpp>
+#include <ftxui/component/component.hpp>
+#include <ftxui/dom/elements.hpp>
 #include "SmartArray.h"
 #include "Employee.h"
+#include <sstream>
 
-void PrintMenu() {
-    std::cout << "\n===== MENU =====\n";
-    std::cout << "1. Dodaj pracownika\n";
-    std::cout << "2. Wyswietl wszystkich pracownikow\n";
-    std::cout << "3. Edytuj pracownika\n";
-    std::cout << "4. Usun pracownika\n";
-    std::cout << "5. Liczba pracownikow\n";
-    std::cout << "6. Wyczysc wszystkich\n";
-    std::cout << "0. Wyjscie\n";
-    std::cout << "================\n";
-}
-
-void ClearCin() {
-    std::cin.clear();
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-}
-
-Employee GetEmployeeFromInput() {
-    std::string name, surname, position;
-    int age;
-    double salary;
-
-    std::cout << "Imie: ";
-    std::getline(std::cin, name);
-    std::cout << "Nazwisko: ";
-    std::getline(std::cin, surname);
-    std::cout << "Wiek: ";
-    std::cin >> age; ClearCin();
-    std::cout << "Stanowisko: ";
-    std::getline(std::cin, position);
-    std::cout << "Pensja: ";
-    std::cin >> salary; ClearCin();
-
-    return Employee(name, surname, age, position, salary);
-}
+using namespace ftxui;
 
 int main() {
+    ScreenInteractive screen = ScreenInteractive::TerminalOutput();
+
     SmartArray<Employee> employees;
-    int option;
 
-    do {
-        PrintMenu();
-        std::cout << "Wybor: ";
-        std::cin >> option;
-        ClearCin();
+    // ----------- MENU ------------
+    std::vector<std::string> menu_entries = {
+        "Dodaj pracownika",
+        "Wyswietl wszystkich",
+        "Usun pracownika",
+        "Wyczysc wszystkich",
+        "Wyjscie"
+    };
+    int selected = 0;
+    auto menu = Menu(&menu_entries, &selected);
 
-        switch (option) {
-        case 1: {
-            std::cout << "\n--- Dodaj pracownika ---\n";
-            employees.PushBack(GetEmployeeFromInput());
-            break;
+    // ----------- ADD EMPLOYEE ------------
+    std::string name, surname, position, age_str, salary_str;
+    std::string info_message;
+
+    auto name_in     = Input(&name,     "Imie");
+    auto surname_in  = Input(&surname,  "Nazwisko");
+    auto age_in      = Input(&age_str,  "Wiek (int)");
+    auto position_in = Input(&position, "Stanowisko");
+    auto salary_in   = Input(&salary_str, "Pensja (double)");
+    auto add_btn     = Button("Dodaj", [&] {
+        try {
+            int    age    = std::stoi(age_str);
+            double salary = std::stod(salary_str);
+            employees.PushBack(Employee(name, surname, age, position, salary));
+            name.clear(); surname.clear(); position.clear(); age_str.clear(); salary_str.clear();
+            info_message = "Dodano pracownika.";
+        } catch (...) {
+            info_message = "Błąd danych wejściowych.";
         }
-        case 2: {
-            std::cout << "\n--- Lista pracownikow ---\n";
-            for (size_t i = 0; i < employees.Size(); ++i) {
-                std::cout << i << ": ";
-                employees[i].Print();
+    });
+    auto add_container = Container::Vertical({ name_in, surname_in, age_in, position_in, salary_in, add_btn });
+
+    // ----------- DELETE EMPLOYEE ------------
+    std::string delete_index_str;
+    auto delete_index_in = Input(&delete_index_str, "Indeks");
+    auto delete_btn      = Button("Usuń", [&] {
+        try {
+            size_t idx = std::stoul(delete_index_str);
+            if (idx < employees.Size()) {
+                employees.RemoveElem(idx);
+                info_message = "Usunięto pracownika.";
+            } else {
+                info_message = "Nieprawidłowy indeks.";
             }
-            break;
+        } catch (...) {
+            info_message = "Błąd danych wejściowych.";
         }
-        case 3: {
-            size_t index;
-            std::cout << "Podaj indeks do edycji: ";
-            std::cin >> index; ClearCin();
-            if (index >= employees.Size()) {
-                std::cout << "Nieprawidlowy indeks!\n";
+    });
+    auto delete_container = Container::Vertical({ delete_index_in, delete_btn });
+
+    // ----------- CLEAR ALL ------------
+    auto clear_btn = Button("Usuń wszystkich", [&] {
+        employees.Clear();
+        info_message = "Usunięto wszystkich pracowników.";
+    });
+    auto clear_container = Container::Vertical({ clear_btn });
+
+    // ----------- TAB CONTAINER ------------
+    auto content_container = Container::Tab({
+        add_container,          // 0 Dodaj
+        Container::Vertical({}),// 1 Wyswietl wszystkich (placeholder; rendered dynamically)
+        delete_container,       // 2 Usun
+        clear_container,        // 3 Wyczyść
+        Container::Vertical({}) // 4 Wyjście
+    }, &selected);
+
+    auto root = Container::Horizontal({ menu, content_container });
+
+    // ----------- RENDERER ------------
+    auto renderer = Renderer(root, [&] {
+        Element sidebar = menu->Render() | frame;
+
+        Element main_window;
+        switch (selected) {
+            case 0:
+                main_window = add_container->Render();
+                break;
+
+            case 1: { // list all employees
+                std::vector<Element> lines;
+                for (size_t i = 0; i < employees.Size(); ++i) {
+                    std::ostringstream os;
+                    os << i << ": " << employees[i].ToString();
+                    lines.push_back(text(os.str()));
+                }
+                if (lines.empty())
+                    lines.push_back(text("Brak pracowników."));
+                main_window = vbox(std::move(lines));
                 break;
             }
-            std::cout << "Podaj nowe dane:\n";
-            employees.EditElem(index, GetEmployeeFromInput());
-            break;
-        }
-        case 4: {
-            size_t index;
-            std::cout << "Podaj indeks do usuniecia: ";
-            std::cin >> index; ClearCin();
-            if (index >= employees.Size()) {
-                std::cout << "Nieprawidlowy indeks!\n";
-                break;
-            }
-            employees.RemoveElem(index);
-            break;
-        }
-        case 5:
-            std::cout << "Liczba pracownikow: " << employees.Size() << "\n";
-            break;
-        case 6:
-            employees.Clear();
-            std::cout << "Wszyscy pracownicy usunieci.\n";
-            break;
-        case 0:
-            std::cout << "Koniec programu.\n";
-            break;
-        default:
-            std::cout << "Nieprawidlowy wybor!\n";
-        }
-    } while (option != 0);
 
+            case 2:
+                main_window = delete_container->Render();
+                break;
+
+            case 3:
+                main_window = clear_container->Render();
+                break;
+
+            case 4:
+                screen.Exit();
+                main_window = text("Zamykam...");
+                break;
+        }
+
+        if (!info_message.empty()) {
+            main_window = vbox({ main_window, separator(), text(info_message) | color(Color::Green) });
+        }
+
+        return hbox({
+            sidebar | flex_shrink,
+            separator(),
+            main_window | flex
+        }) | flex;
+    });
+
+    // ----------- EVENT LOOP ------------
+    screen.Loop(renderer);
     return 0;
 }

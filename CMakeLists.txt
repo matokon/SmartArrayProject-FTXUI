@@ -1,6 +1,14 @@
 cmake_minimum_required(VERSION 3.10)
 project(SmartArrayProject LANGUAGES CXX)
 
+include(FetchContent)
+FetchContent_Declare(
+  ftxui
+  GIT_REPOSITORY https://github.com/ArthurSonzogni/ftxui
+  GIT_TAG v5.0.0
+)
+FetchContent_MakeAvailable(ftxui)
+
 # Standard C++
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -9,14 +17,14 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_library(SmartArray INTERFACE)
 target_include_directories(SmartArray INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-# Aplikacja g³ówna – dodaj Ÿród³a C++ (main.cpp i Employee.cpp)
+# Aplikacja gï¿½ï¿½wna ï¿½ dodaj ï¿½rï¿½dï¿½a C++ (main.cpp i Employee.cpp)
 add_executable(MainApp
     app/main.cpp
-    src/Employee.cpp      # <-- dodajemy Ÿród³o implementacji
+    src/Employee.cpp      # <-- dodajemy ï¿½rï¿½dï¿½o implementacji
 )
 
-# Ustaw katalog include/ jako katalog nag³ówków dla MainApp
+# Ustaw katalog include/ jako katalog nagï¿½ï¿½wkï¿½w dla MainApp
 target_include_directories(MainApp PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-# Linkowanie biblioteki SmartArray
-target_link_libraries(MainApp SmartArray)
+# Linkowanie biblioteki SmartArray i ftxui
+target_link_libraries(MainApp SmartArray ftxui::component)
