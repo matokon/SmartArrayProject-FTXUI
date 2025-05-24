@@ -47,7 +47,7 @@ public:
         return *this;
     }
 
-    // ----- Core operations -----
+    //   operacje na Smartarray
     void PushBack(const T& value) {
         if (m_Size >= m_Capacity)
             ReAlloc(m_Capacity ? m_Capacity * 2 : 1);
@@ -68,12 +68,12 @@ public:
 
     void Clear() { m_Size = 0; }
 
-    // ----- Capacity helpers -----
+    //       Capacity 
     size_t Size() const { return m_Size; }
     size_t Capacity() const { return m_Capacity; }
     bool IsEmpty() const { return m_Size == 0; }
 
-    // ----- Element access -----
+    //     Dostepowe rzeczy
     T& At(size_t index) {
         if (index >= m_Size)
             throw std::out_of_range("Index out of range");
@@ -87,7 +87,7 @@ public:
     T& operator[](size_t index) { return m_Data[index]; }
     const T& operator[](size_t index) const { return m_Data[index]; }
 
-    // ----- Capacity management -----
+    //      Capacity  
     void Reserve(size_t newCapacity) {
         if (newCapacity > m_Capacity)
             ReAlloc(newCapacity);
@@ -102,7 +102,7 @@ public:
     }
     void ShrinkToFit() { ReAlloc(m_Size); }
 
-    // ----- Insertion helpers -----
+    //      Iteracja
     void Insert(size_t index, const T& value) {
         if (index > m_Size) return;
         if (m_Size >= m_Capacity)
@@ -116,7 +116,7 @@ public:
     void PopBack()  { if (m_Size) --m_Size; }
     void PopFront() { RemoveElem(0); }
 
-    // ----- Comparison & stream -----
+    //      Porownywanie
     bool operator==(const SmartArray& other) const {
         if (m_Size != other.m_Size) return false;
         for (size_t i = 0; i < m_Size; ++i)
