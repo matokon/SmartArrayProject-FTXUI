@@ -11,11 +11,9 @@
 
 using namespace ftxui;
 
-//kontener
 SmartArray<Employee> employees;
 std::string info_message;
 
-// Deklaracje
 void RunMenu();
 void AddEmployee(ftxui::ScreenInteractive& screen);
 void DisplayAll(ftxui::ScreenInteractive& screen);
@@ -46,11 +44,11 @@ void RunMenu() {
     auto screen = ScreenInteractive::TerminalOutput();
 
     menu |= CatchEvent([&](Event event) {
-        if (event == Event::ArrowDown || event == Event::Character('j')) {
+        if (event == Event::ArrowDown) {
             selected = (selected + 1) % entries.size();
             return true;
         }
-        if (event == Event::ArrowUp || event == Event::Character('k')) {
+        if (event == Event::ArrowUp) {
             selected = (selected + entries.size() - 1) % entries.size();
             return true;
         }
@@ -74,12 +72,12 @@ void RunMenu() {
 
     auto renderer = Renderer(menu, [&] {
         return vbox({
-          text("      Employee Manager      ") | bold,
+          text("      Employee Manager      "),
           separator(),
           menu->Render(),
           separator(),
           text(info_message)
-            }) | border;
+            });
         });
 
     screen.Loop(renderer);
@@ -98,7 +96,7 @@ void AddEmployee(ScreenInteractive& screen) {
         try {
             int    age = std::stoi(age_str);
             double salary = std::stod(salary_str);
-            employees.PushBack(Employee(name, surname, age, position, salary));
+            employees.pushBack(Employee(name, surname, age, position, salary));
             info_message = "Dodano pracownika.";
         }
         catch (...) {
@@ -113,11 +111,11 @@ void AddEmployee(ScreenInteractive& screen) {
 
     auto renderer = Renderer(container, [&] {
         std::vector<Element> lines;
-        lines.push_back(text(">> Dodaj pracownika") | underlined);
+        lines.push_back(text(">> Dodaj pracownika"));
         lines.push_back(container->Render());
         lines.push_back(separator());
         lines.push_back(text(info_message));
-        return vbox(lines) | border;
+        return vbox(lines);
         });
 
     screen.Loop(renderer);
@@ -128,7 +126,7 @@ void DisplayAll(ScreenInteractive& screen) {
 
     auto renderer = Renderer([&] {
         std::vector<Element> lines;
-        for (size_t i = 0; i < employees.Size(); ++i) {
+        for (size_t i = 0; i < employees.size(); ++i) {
             std::ostringstream os;
             os << i << ": " << employees[i].ToString();
             lines.push_back(text(os.str()));
@@ -159,8 +157,8 @@ void RemoveEmployee(ScreenInteractive& screen) {
     auto del_btn = Button("Usuń", [&] {
         try {
             size_t idx = std::stoul(idx_str);
-            if (idx < employees.Size()) {
-                employees.RemoveElem(idx);
+            if (idx < employees.size()) {
+                employees.erase(idx);
                 info_message = "Usunięto pracownika.";
             }
             else {
@@ -176,7 +174,7 @@ void RemoveEmployee(ScreenInteractive& screen) {
     auto container = Container::Vertical({ idx_in, del_btn });
     auto renderer = Renderer(container, [&] {
         std::vector<Element> lines;
-        lines.push_back(text(">> Usuń pracownika") | underlined);
+        lines.push_back(text(">> Usuń pracownika"));
         lines.push_back(container->Render());
         lines.push_back(separator());
         lines.push_back(text(info_message));
@@ -194,7 +192,7 @@ void EditEmployee(ScreenInteractive& screen) {
     auto load_btn = Button("Wczytaj", [&] {
         try {
             size_t idx = std::stoul(idx_str);
-            if (idx < employees.Size()) {
+            if (idx < employees.size()) {
                 const auto& e = employees[idx];
                 name = e.GetName();
                 surname = e.GetSurname();
@@ -220,7 +218,7 @@ void EditEmployee(ScreenInteractive& screen) {
     auto save_btn = Button("Zapisz", [&] {
         try {
             size_t idx = std::stoul(idx_str);
-            if (idx < employees.Size()) {
+            if (idx < employees.size()) {
                 employees[idx].SetName(name);
                 employees[idx].SetSurname(surname);
                 employees[idx].SetAge(std::stoi(age_str));
@@ -246,7 +244,7 @@ void EditEmployee(ScreenInteractive& screen) {
 
     auto renderer = Renderer(container, [&] {
         std::vector<Element> lines;
-        lines.push_back(text(">> Edytuj pracownika") | underlined);
+        lines.push_back(text(">> Edytuj pracownika"));
         lines.push_back(container->Render());
         lines.push_back(separator());
         lines.push_back(text(info_message));
@@ -257,7 +255,7 @@ void EditEmployee(ScreenInteractive& screen) {
 }
 
 void ClearAllEntries() {
-    employees.Clear();
+    employees.clear();
     info_message = "Usunięto wszystkich pracowników.";
 }
 
